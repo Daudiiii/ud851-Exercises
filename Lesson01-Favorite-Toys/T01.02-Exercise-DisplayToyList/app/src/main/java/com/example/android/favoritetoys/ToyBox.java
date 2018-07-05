@@ -17,12 +17,16 @@ package com.example.android.favoritetoys;
 
 public final class ToyBox {
 
+    public static String getToyByName(int i){
+        return getToyNames()[i];
+    }
     /**
      * This method returns a list of 100 popular toy names from the 20th and early 21st centuries.
      * I don't know about you guys, but this definitely brings me back to my childhood...
      *
      * @return A list of popular toys
      */
+
     public static String[] getToyNames() {
         return new String[] {
                 "Red Toy Wagon",

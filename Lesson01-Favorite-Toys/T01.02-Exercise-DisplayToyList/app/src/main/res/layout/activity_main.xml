@@ -19,10 +19,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!--TODO (2) Add an id to the TextView with the value @+id/tv_toy_names-->
-    <TextView
+    <!--COMPLETED (2) Add an id to the TextView with the value @+id/tv_toy_names-->
+
+    <EditText
+        android:id="@+id/toynum"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number" />
+
+    <TextView
+        android:id="@+id/tv_toy_names"
+        android:layout_width="206dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
         android:padding="16dp"
         android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:text="Button" />
 </FrameLayout>

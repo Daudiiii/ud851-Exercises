@@ -17,16 +17,38 @@ package com.example.android.favoritetoys;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
 
     // TODO (1) Declare a TextView variable called mToysListTextView
+
+    private View.OnClickListener mCorkyListener = new View.OnClickListener() {
+        public void onClick(View v) {
+            // do something when the button is clicked
+            EditText editText = (EditText)v.findViewById(R.id.toynum);
+            TextView view = (TextView)v.findViewById(R.id.tv_toy_names);
+            view.append(ToyBox.getToyByName(Integer.parseInt(editText.getText().toString())));
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Button button = (Button) findViewById(R.id.button);
+        button.setOnClickListener(mCorkyListener);
+
+//        String[] s = ToyBox.getToyNames();
+//        for (int i = 0; i < s.length; i++){
+//            t.append(s[i]+"\n");
+//        }
         // TODO (3) Use findViewById to get a reference to the TextView from the layout
 
         // TODO (4) Use the static ToyBox.getToyNames method and store the names in a String array
